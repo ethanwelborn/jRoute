@@ -16,14 +16,12 @@ var app = {
     $.each(app.templates, function() {
       if (this.location == location) {
         app.$outlet.html(this.html);
-        console.log('this was loaded by lazy loading');
         return;
       }
     });
 
     $.each(app.routeObj, function() {
       if (location == this.location) {
-        console.log('this was loaded by slow loading');
         app.$outlet.html(app.load(this.template));
       };
     });
